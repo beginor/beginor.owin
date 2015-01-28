@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Beginor.Owin.StaticFile</id>
+    <version>0.1.0</version>
+    <title>Beginor.Owin.StaticFile</title>
+    <authors>beginor</authors>
+    <owners>beginor</owners>
+    <projectUrl>https://github.com/beginor/Beginor.Owin.StaticFile</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simple static file middleware for owin.</description>
+    <summary>Simple static file middleware for owin, just has reference to Owin.dll, no reference to Microsoft.Owin.*; Can handle most common static file types;ETag header support (optional and default), use file's last modified time as etag value;</summary>
+    <releaseNotes>init release.</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>owin middleware static-file</tags>
+    <dependencies>
+        <dependency id="Owin" version="1.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="src\Beginor.Owin.StaticFile\bin\release\Beginor.Owin.StaticFile.dll" target="lib\net45" />
+  </files>
+</package>
