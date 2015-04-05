@@ -41,6 +41,8 @@ namespace Beginor.Owin.StaticFile {
 
         public IMimeTypeProvider MimeTypeProvider { get; set; }
 
+        public IETagProvider ETagProvider { get; set; }
+
     }
 
 }

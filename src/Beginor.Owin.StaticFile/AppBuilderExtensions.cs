@@ -14,6 +14,9 @@ namespace Beginor.Owin.StaticFile {
                 options.MimeTypeProvider = new MimeTypeProvider();
             }
             if (options.EnableETag) {
+                if (options.ETagProvider == null) {
+                    options.ETagProvider = new LastWriteTimeETagProvider();
+                }
                 app.Use(typeof(ETagMiddleware), options);
             }
             app.Use(typeof(StaticFileMiddleware), options);
