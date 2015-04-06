@@ -15,6 +15,33 @@ namespace OwinSecurityTest {
 
     class Program {
 
+        private static void Configure(IAppBuilder app) {
+            app.Properties["host.AppName"] = "OwinSecurityTest";
+            app.Properties["security.DataProtectionProvider"] = new AesDataProtectionProvider("OwinSecurityTest");
+            // static file
+            app.UseStaticFile(new StaticFileMiddlewareOptions
+            {
+                RootDirectory = @"../Website",
+                DefaultFile = "index.html",
+                MimeTypeProvider = new MimeTypeProvider(),
+                EnableETag = true,
+                ETagProvider = new LastWriteTimeETagProvider()
+            });
+
+            // cookie auth;
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            {
+                AuthenticationType = CookieAuthenticationDefaults.AuthenticationType,
+                TicketDataFormat = new TicketDataFormat(new AesDataProtector("MySecurityAesKey")),
+                Provider = new CookieAuthenticationProvider {
+                }
+            });
+            // web-api
+            var config = new HttpConfiguration();
+            config.MapHttpAttributeRoutes();
+            app.UseWebApi(config);
+        }
+
         static void Main(string[] args) {
             // create a new AppBuilder
             IAppBuilder app = new AppBuilder();
@@ -48,27 +75,5 @@ namespace OwinSecurityTest {
             }
         }
 
-        private static void Configure(IAppBuilder app) {
-            app.Properties["host.AppName"] = "OwinSecurityTest";
-            app.Properties["security.DataProtectionProvider"] = new AesDataProtector("MySecurityAesKey");
-            // static file
-            app.UseStaticFile(new StaticFileMiddlewareOptions {
-                RootDirectory = @"../Website",
-                DefaultFile = "index.html",
-                MimeTypeProvider = new MimeTypeProvider(),
-                EnableETag = true,
-                ETagProvider = new LastWriteTimeETagProvider()
-            });
-
-            // cookie auth;
-            app.UseCookieAuthentication(new CookieAuthenticationOptions {
-                AuthenticationType = CookieAuthenticationDefaults.AuthenticationType,
-                TicketDataFormat = new TicketDataFormat(new AesDataProtector("MySecurityAesKey"))
-            });
-            // web-api
-            var config = new HttpConfiguration();
-            config.MapHttpAttributeRoutes();
-            app.UseWebApi(config);
-        }
     }
 }
