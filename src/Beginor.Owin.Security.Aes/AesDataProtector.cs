@@ -7,8 +7,6 @@ using System.Text;
 
 namespace Beginor.Owin.Security.Aes {
 
-    //public IDataProtectionProvider
-
     public class AesDataProtector : IDataProtector {
 
         private readonly byte[] key;

@@ -11,13 +11,12 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.DataHandler;
 using Beginor.Owin.Security.Aes;
 
+
 namespace OwinSecurityTest {
 
     class Program {
 
         private static void Configure(IAppBuilder app) {
-            app.Properties["host.AppName"] = "OwinSecurityTest";
-            app.Properties["security.DataProtectionProvider"] = new AesDataProtectionProvider("OwinSecurityTest");
             // static file
             app.UseStaticFile(new StaticFileMiddlewareOptions {
                 RootDirectory = @"../Website",
@@ -26,11 +25,11 @@ namespace OwinSecurityTest {
                 EnableETag = true,
                 ETagProvider = new LastWriteTimeETagProvider()
             });
-
+            // use aes data protection provider;
+            app.UseAesDataProtectionProvider();
             // cookie auth;
             app.UseCookieAuthentication(new CookieAuthenticationOptions{
-                AuthenticationType = CookieAuthenticationDefaults.AuthenticationType,
-                //TicketDataFormat = new TicketDataFormat(new AesDataProtector("MySecurityAesKey"))
+                AuthenticationType = CookieAuthenticationDefaults.AuthenticationType
             });
             // web-api
             var config = new HttpConfiguration();
@@ -44,12 +43,15 @@ namespace OwinSecurityTest {
             // init nowin's owin server factory.
             OwinServerFactory.Initialize(app.Properties);
 
+            app.Properties["host.AppName"] = "OwinSecurityTest";
+
             Configure(app);
 
             var serverBuilder = new ServerBuilder();
             const string ip = "127.0.0.1";
             const int port = 8888;
             serverBuilder.SetAddress(IPAddress.Parse(ip)).SetPort(port)
+
                 .SetOwinApp(app.Build())
                 .SetOwinCapabilities((IDictionary<string, object>)app.Properties[OwinKeys.ServerCapabilitiesKey]);
 
