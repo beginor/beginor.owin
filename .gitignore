@@ -30,7 +30,6 @@ AppPackages
 *.tlh
 *.[Cc]ache
 *.bak
-*.ncb
 *.ilk
 *.log
 *.lib
@@ -43,12 +42,10 @@ ipch/
 *.vspscc
 *.vssscc
 *.bak.*
-*.bak
 *.schemaview
 *.Publish.xml
 *.manifest
 *.xap
-*.sdf
 *.opensdf
 *.filters
 
@@ -83,3 +80,4 @@ out
 .sass-cache
 *.ide
 *.DotSettings
+*.nupkg
