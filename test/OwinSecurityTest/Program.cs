@@ -19,8 +19,7 @@ namespace OwinSecurityTest {
             app.Properties["host.AppName"] = "OwinSecurityTest";
             app.Properties["security.DataProtectionProvider"] = new AesDataProtectionProvider("OwinSecurityTest");
             // static file
-            app.UseStaticFile(new StaticFileMiddlewareOptions
-            {
+            app.UseStaticFile(new StaticFileMiddlewareOptions {
                 RootDirectory = @"../Website",
                 DefaultFile = "index.html",
                 MimeTypeProvider = new MimeTypeProvider(),
@@ -29,12 +28,9 @@ namespace OwinSecurityTest {
             });
 
             // cookie auth;
-            app.UseCookieAuthentication(new CookieAuthenticationOptions
-            {
+            app.UseCookieAuthentication(new CookieAuthenticationOptions{
                 AuthenticationType = CookieAuthenticationDefaults.AuthenticationType,
-                TicketDataFormat = new TicketDataFormat(new AesDataProtector("MySecurityAesKey")),
-                Provider = new CookieAuthenticationProvider {
-                }
+                //TicketDataFormat = new TicketDataFormat(new AesDataProtector("MySecurityAesKey"))
             });
             // web-api
             var config = new HttpConfiguration();
