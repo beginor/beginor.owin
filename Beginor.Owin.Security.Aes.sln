@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
+# Visual Studio 2012
 VisualStudioVersion = 14.0.22609.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4D17191D-8A5A-41F7-96E0-0A58AEDAB7A4}"
@@ -32,11 +32,14 @@ Global
 		{5F6A4C66-32F3-450B-89A8-6DD6C432E7D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F6A4C66-32F3-450B-89A8-6DD6C432E7D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2DB8C426-DAB9-4A1A-8DE7-862248A1E3B7} = {4D17191D-8A5A-41F7-96E0-0A58AEDAB7A4}
 		{5F6A4C66-32F3-450B-89A8-6DD6C432E7D7} = {E928557F-C7EB-4D73-BA8F-82506EDBBE62}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = test\OwinSecurityTest\OwinSecurityTest.csproj
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
