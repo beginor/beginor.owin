@@ -7,6 +7,8 @@ namespace Beginor.Owin.Security.Aes {
 
         private string appName;
 
+        public string Key { get; set; }
+
         public AesDataProtectionProvider() : this(Guid.NewGuid().ToString()) {
         }
 
@@ -18,7 +20,12 @@ namespace Beginor.Owin.Security.Aes {
         }
 
         public IDataProtector Create(params string[] purposes) {
-            return new AesDataProtector(appName + ":" + string.Join(",", purposes));
+            var key = GetProtectorKey();
+            return new AesDataProtector(key);
+        }
+
+        private string GetProtectorKey() {
+            return string.IsNullOrEmpty(Key) ? appName : Key;
         }
     }
 }
