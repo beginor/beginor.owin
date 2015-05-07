@@ -28,12 +28,12 @@ namespace LogTestApp {
             Assert.IsNotNull(container);
         }
 
-		[Test]
-		public void TestResolveLoggerFactory() {
-			var loggerFactory = container.Resolve<ILoggerFactory>();
-			Assert.IsNotNull(loggerFactory);
-			var logger = loggerFactory.Create (this.GetType ().ToString ());
-			Assert.IsNotNull (logger);
-		}
+        [Test]
+        public void TestResolveLoggerFactory() {
+            var loggerFactory = container.Resolve<ILoggerFactory>();
+            Assert.IsNotNull(loggerFactory);
+            var logger = loggerFactory.Create(GetType().ToString());
+            Assert.IsNotNull(logger);
+        }
     }
 }

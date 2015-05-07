@@ -4,7 +4,7 @@ namespace Beginor.Owin.Logging {
 
     public class CastleLoggerFactory : Microsoft.Owin.Logging.ILoggerFactory {
 
-        private ILoggerFactory loggerFactory;
+        private readonly ILoggerFactory loggerFactory;
 
         public CastleLoggerFactory(ILoggerFactory loggerFactory) {
             this.loggerFactory = loggerFactory;
