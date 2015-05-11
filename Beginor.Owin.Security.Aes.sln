@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+VisualStudioVersion = 14.0.22609.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4D17191D-8A5A-41F7-96E0-0A58AEDAB7A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beginor.Owin.Security.Aes", "src\Beginor.Owin.Security.Aes\Beginor.Owin.Security.Aes.csproj", "{2DB8C426-DAB9-4A1A-8DE7-862248A1E3B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{E928557F-C7EB-4D73-BA8F-82506EDBBE62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OwinSecurityTest", "test\OwinSecurityTest\OwinSecurityTest.csproj", "{5F6A4C66-32F3-450B-89A8-6DD6C432E7D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1B758F07-8BA7-464C-A691-025420D1D886}"
+	ProjectSection(SolutionItems) = preProject
+		Beginor.Owin.Security.Aes.nuspec = Beginor.Owin.Security.Aes.nuspec
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DB8C426-DAB9-4A1A-8DE7-862248A1E3B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DB8C426-DAB9-4A1A-8DE7-862248A1E3B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DB8C426-DAB9-4A1A-8DE7-862248A1E3B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DB8C426-DAB9-4A1A-8DE7-862248A1E3B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F6A4C66-32F3-450B-89A8-6DD6C432E7D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F6A4C66-32F3-450B-89A8-6DD6C432E7D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F6A4C66-32F3-450B-89A8-6DD6C432E7D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F6A4C66-32F3-450B-89A8-6DD6C432E7D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2DB8C426-DAB9-4A1A-8DE7-862248A1E3B7} = {4D17191D-8A5A-41F7-96E0-0A58AEDAB7A4}
+		{5F6A4C66-32F3-450B-89A8-6DD6C432E7D7} = {E928557F-C7EB-4D73-BA8F-82506EDBBE62}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = test\OwinSecurityTest\OwinSecurityTest.csproj
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

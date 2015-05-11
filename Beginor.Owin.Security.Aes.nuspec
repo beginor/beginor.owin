@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Beginor.Owin.Security.Aes</id>
+    <version>0.2.0</version>
+    <title>Beginor.Owin.Security.Aes</title>
+    <authors>beginor</authors>
+    <owners>beginor</owners>
+    <projectUrl>https://github.com/beginor/Beginor.Owin.Security.Aes</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Aes data protection provider for Microsoft.Owin.Security.</description>
+    <summary>
+        Aes data protection provider for Microsoft.Owin.Security, fully managed C# code, works
+        with mono and any owin host.;
+    </summary>
+    <releaseNotes>
+        0.2.0: add Key property to AesDataProtectionProvider for SSO/OAuth, if key is not set, use app.Properties["host.AppName"] or Guid.NewGuid() as key, 
+        0.1.0: init release;
+    </releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>owin security aes</tags>
+    <dependencies>
+        <dependency id="Microsoft.Owin.Security" version="3.0.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="src\Beginor.Owin.Security.Aes\bin\Release\Beginor.Owin.Security.Aes.dll" target="lib\net45" />
+  </files>
+</package>
