@@ -53,3 +53,7 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions{
 BTW:
 
 Microsoft.Owin.Security.*.dll need app property `host.AppName` to work, but some thirdpart owin server [jexus](http://jexus.org/) or [nowin](https://github.com/Bobris/Nowin) does not provide this property, if you use jexus or nowin, please add `host.AppName` to the `app.Properties` dictionary before call to `Configure` function.
+
+# beginor.owin.logging
+
+castle core logging integration with microsoft owin.
