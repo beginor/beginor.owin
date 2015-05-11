@@ -7,8 +7,30 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0B3571AA-905
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{607D9DD2-CC35-4D7B-A065-1E8FA7859023}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beginor.Owin.StaticFile", "src\Beginor.Owin.StaticFile\Beginor.Owin.StaticFile.csproj", "{94B6EACC-4E4E-4E9B-ADA6-BA4C007E272C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWithNowin", "test\TestWithNowin\TestWithNowin.csproj", "{78E2AB50-BAF7-4651-9B64-C4A57E8DEA85}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94B6EACC-4E4E-4E9B-ADA6-BA4C007E272C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94B6EACC-4E4E-4E9B-ADA6-BA4C007E272C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94B6EACC-4E4E-4E9B-ADA6-BA4C007E272C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94B6EACC-4E4E-4E9B-ADA6-BA4C007E272C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78E2AB50-BAF7-4651-9B64-C4A57E8DEA85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78E2AB50-BAF7-4651-9B64-C4A57E8DEA85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78E2AB50-BAF7-4651-9B64-C4A57E8DEA85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78E2AB50-BAF7-4651-9B64-C4A57E8DEA85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{94B6EACC-4E4E-4E9B-ADA6-BA4C007E272C} = {0B3571AA-905C-4F2B-A133-CE17EEDA7056}
+		{78E2AB50-BAF7-4651-9B64-C4A57E8DEA85} = {607D9DD2-CC35-4D7B-A065-1E8FA7859023}
 	EndGlobalSection
 EndGlobal
