@@ -1,3 +1,4 @@
+using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
 using NUnit.Framework;
@@ -19,6 +20,9 @@ namespace LogTestApp {
             container.Install(
                 Configuration.FromXmlFile("windsor.config")
             );
+            container.Register(
+                Component.For<IWindsorContainer>().Instance(container)
+                );
         }
 
         [Test]
