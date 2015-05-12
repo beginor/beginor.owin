@@ -47,4 +47,5 @@ namespace Beginor.Owin.Windsor {
         }
 
     }
+
 }
