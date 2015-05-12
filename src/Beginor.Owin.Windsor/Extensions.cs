@@ -7,7 +7,7 @@ namespace Beginor.Owin.Windsor {
 
     public static class Extensions {
 
-        private static readonly string AppContainerName = "Beginor.Owin.Windsor"
+        private static readonly string AppContainerName = "Beginor.Owin.Windsor";
 
         public static void UseWindsorContainer(this IAppBuilder app, IWindsorContainer container) {
             if (app == null) {
@@ -33,7 +33,7 @@ namespace Beginor.Owin.Windsor {
             container.Install(
                 Configuration.FromXmlFile("windsor.config")
             );
-            app.UseWindsorContainer(app, container);
+            app.UseWindsorContainer(container);
         }
 
         public static IWindsorContainer GetWindsorContainer(this IAppBuilder app) {

@@ -8,7 +8,7 @@ namespace Beginor.Owin.Windsor {
 
         private readonly IWindsorContainer container;
 
-        private ILogger logger = NullLogger.Instance();
+        private ILogger logger = NullLogger.Instance;
 
         public ILogger Logger {
             get { return logger; }
