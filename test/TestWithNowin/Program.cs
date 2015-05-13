@@ -2,10 +2,13 @@
 using Owin;
 using Microsoft.Owin.Builder;
 using Nowin;
-using Beginor.Owin.StaticFile;
 using System.Net;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Beginor.Owin.Windsor;
+using Beginor.Owin.StaticFile;
+using Beginor.Owin.WebApi.Windsor;
+using System.Web.Http;
 
 namespace TestWithNowin {
 
@@ -17,12 +20,7 @@ namespace TestWithNowin {
             // init nowin's owin server factory.
             OwinServerFactory.Initialize(app.Properties);
 
-            app.UseStaticFile(new StaticFileMiddlewareOptions {
-                RootDirectory = @"C:\inetpub\wwwroot",
-                DefaultFile = "iisstart.htm",
-                EnableETag = true,
-                MimeTypeProvider = new MimeTypeProvider()
-            });
+            Configure(app);
 
             var serverBuilder = new ServerBuilder();
             const string ip = "127.0.0.1";
@@ -47,6 +45,26 @@ namespace TestWithNowin {
 
                 Console.ReadLine();
             }
+        }
+
+        public static void Configure(IAppBuilder app) {
+            app.UseWindsorContainer("windsor.config");
+            var container = app.GetWindsorContainer();
+
+            var options = container.Resolve<StaticFileMiddlewareOptions>();
+            app.UseStaticFile(options);
+
+            var config = new HttpConfiguration();
+
+            config.MapHttpAttributeRoutes();
+            config.Routes.MapHttpRoute(
+                name: "Default",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
+            config.UseWindsorContainer(container);
+
+            app.UseWebApi(config);
         }
     }
 }
