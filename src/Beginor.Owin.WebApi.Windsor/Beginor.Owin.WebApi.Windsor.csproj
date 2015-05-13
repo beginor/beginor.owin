@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CastleExceptionLogger.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="WindsorDependencyResolver.cs" />
     <Compile Include="WindsorDependencyScope.cs" />
