@@ -20,6 +20,8 @@ namespace Beginor.Owin.WebApi.Windsor {
                 Component.For<IDependencyResolver>().ImplementedBy<WindsorDependencyResolver>()
             );
             config.DependencyResolver = container.Resolve<IDependencyResolver>();
+
+            //System.Web.Http.ExceptionHandling.ExceptionLogger
         }
 
     }

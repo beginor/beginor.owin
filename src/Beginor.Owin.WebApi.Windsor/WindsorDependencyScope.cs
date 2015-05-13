@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http.Dependencies;
 using Castle.Core.Logging;
+using Castle.MicroKernel;
 using Castle.Windsor;
 
 namespace Beginor.Owin.WebApi.Windsor {
@@ -35,8 +36,11 @@ namespace Beginor.Owin.WebApi.Windsor {
             try {
                 service = container.Resolve(serviceType);
             }
+            catch (ComponentNotFoundException ex) {
+                Logger.WarnFormat("Can not resolve service of {0}, return is null.", serviceType);
+            }
             catch (Exception ex) {
-                Logger.Warn(string.Format("Can not resolve service of {0}, return is null.", serviceType), ex);
+                Logger.Warn(string.Format("Exception caught resolving service of {0}, return is null.", serviceType), ex);
             }
             return service;
         }
@@ -51,12 +55,4 @@ namespace Beginor.Owin.WebApi.Windsor {
 
     }
 
-    public class WindsorDependencyResolver : WindsorDependencyScope, IDependencyResolver {
-
-        public WindsorDependencyResolver(IWindsorContainer container) : base(container) { }
-
-        public IDependencyScope BeginScope() {
-            return new WindsorDependencyScope(Container);
-        }
-    }
 }

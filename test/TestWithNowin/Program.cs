@@ -9,6 +9,9 @@ using Beginor.Owin.Windsor;
 using Beginor.Owin.StaticFile;
 using Beginor.Owin.WebApi.Windsor;
 using System.Web.Http;
+using Beginor.Owin.Security.Aes;
+using Microsoft.Owin.Logging;
+using Microsoft.Owin.Security.Cookies;
 
 namespace TestWithNowin {
 
@@ -51,8 +54,17 @@ namespace TestWithNowin {
             app.UseWindsorContainer("windsor.config");
             var container = app.GetWindsorContainer();
 
+            var loggerFactory = container.Resolve<ILoggerFactory>();
+            app.SetLoggerFactory(loggerFactory);
+
             var options = container.Resolve<StaticFileMiddlewareOptions>();
             app.UseStaticFile(options);
+
+            app.UseAesDataProtectionProvider();
+
+            app.UseCookieAuthentication(new CookieAuthenticationOptions {
+                
+            });
 
             var config = new HttpConfiguration();
 
