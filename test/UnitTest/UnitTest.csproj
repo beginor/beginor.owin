@@ -62,6 +62,15 @@
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5">
       <HintPath>..\..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,6 +108,10 @@
     <ProjectReference Include="..\..\src\Beginor.Owin.Windsor\Beginor.Owin.Windsor.csproj">
       <Project>{974DCEF4-1B34-463C-AFA2-29CDB0F61F35}</Project>
       <Name>Beginor.Owin.Windsor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWithNowin\TestWithNowin.csproj">
+      <Project>{78E2AB50-BAF7-4651-9B64-C4A57E8DEA85}</Project>
+      <Name>TestWithNowin</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

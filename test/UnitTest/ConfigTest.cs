@@ -2,6 +2,7 @@
 using Microsoft.Owin.Logging;
 using NUnit.Framework;
 using Beginor.Owin.StaticFile;
+using TestWithNowin.Controllers;
 
 namespace UnitTest {
 
@@ -27,6 +28,12 @@ namespace UnitTest {
             Assert.IsNotNull(options);
             Assert.AreEqual("index.html", options.DefaultFile);
             Assert.IsTrue(options.EnableETag);
+        }
+
+        [Test]
+        public void CanResolveSampleController() {
+            var controller = Container.Resolve<SampleController>();
+            Assert.IsNotNull(controller);
         }
     }
 }
