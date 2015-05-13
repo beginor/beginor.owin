@@ -3,7 +3,7 @@ using Castle.Windsor;
 using Castle.Windsor.Installer;
 using NUnit.Framework;
 
-namespace LogTestApp {
+namespace UnitTest {
 
     //[TestFixture]
     public abstract class WindsorTest {
@@ -22,7 +22,7 @@ namespace LogTestApp {
             );
             container.Register(
                 Component.For<IWindsorContainer>().Instance(container)
-                );
+            );
         }
 
         [Test]

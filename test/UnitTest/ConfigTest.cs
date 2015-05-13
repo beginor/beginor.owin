@@ -1,10 +1,11 @@
 ﻿using Castle.Windsor;
 using Microsoft.Owin.Logging;
 using NUnit.Framework;
+using Beginor.Owin.StaticFile;
 
-namespace LogTestApp {
+namespace UnitTest {
 
-    public class OwinLoggingTest : WindsorTest {
+    public class ConfigTest : WindsorTest {
 
         [Test]
         public void TestResolveLoggerFactory() {
@@ -20,5 +21,12 @@ namespace LogTestApp {
             Assert.IsNotNull(Container);
         }
 
+        [Test]
+        public void CanResolveStaticFileMiddlewareOptions() {
+            var options = Container.Resolve<StaticFileMiddlewareOptions>();
+            Assert.IsNotNull(options);
+            Assert.AreEqual("index.html", options.DefaultFile);
+            Assert.IsTrue(options.EnableETag);
+        }
     }
 }

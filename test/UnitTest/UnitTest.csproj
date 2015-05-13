@@ -64,16 +64,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WindsorTest.cs" />
+    <Compile Include="ConfigTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="log.config">
+    <None Include="packages.config" />
+    <None Include="..\TestWithNowin\log.config">
+      <Link>log.config</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
-    <None Include="windsor.config">
+    <None Include="..\TestWithNowin\windsor.config">
+      <Link>windsor.config</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -81,6 +83,22 @@
     <ProjectReference Include="..\..\src\Beginor.Owin.Loging\Beginor.Owin.Logging.csproj">
       <Project>{AF055EAA-4CC9-4A7D-B84B-6735518D10AC}</Project>
       <Name>Beginor.Owin.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Beginor.Owin.Security.Aes\Beginor.Owin.Security.Aes.csproj">
+      <Project>{2DB8C426-DAB9-4A1A-8DE7-862248A1E3B7}</Project>
+      <Name>Beginor.Owin.Security.Aes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Beginor.Owin.StaticFile\Beginor.Owin.StaticFile.csproj">
+      <Project>{94B6EACC-4E4E-4E9B-ADA6-BA4C007E272C}</Project>
+      <Name>Beginor.Owin.StaticFile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Beginor.Owin.WebApi.Windsor\Beginor.Owin.WebApi.Windsor.csproj">
+      <Project>{133A986C-83DA-4F7C-B3F7-5C286454E0C1}</Project>
+      <Name>Beginor.Owin.WebApi.Windsor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Beginor.Owin.Windsor\Beginor.Owin.Windsor.csproj">
+      <Project>{974DCEF4-1B34-463C-AFA2-29CDB0F61F35}</Project>
+      <Name>Beginor.Owin.Windsor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
