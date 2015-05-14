@@ -54,6 +54,7 @@
     <Compile Include="AppBuilderExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Beginor.Owin.Security.Aes.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

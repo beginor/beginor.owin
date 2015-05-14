@@ -24,6 +24,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="src\Beginor.Owin.Security.Aes\bin\Release\Beginor.Owin.Security.Aes.dll" target="lib\net45" />
+    <file src="bin\Release\Beginor.Owin.Security.Aes.dll" target="lib\net45" />
   </files>
 </package>
