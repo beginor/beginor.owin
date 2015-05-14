@@ -1,4 +1,5 @@
-﻿using Castle.Windsor;
+﻿using System.Web.Http.ExceptionHandling;
+using Castle.Windsor;
 using Microsoft.Owin.Logging;
 using NUnit.Framework;
 using Beginor.Owin.StaticFile;
@@ -19,7 +20,7 @@ namespace UnitTest {
         [Test]
         public void CanResolveContainer() {
             var container = Container.Resolve<IWindsorContainer>();
-            Assert.IsNotNull(Container);
+            Assert.IsNotNull(container);
         }
 
         [Test]
@@ -34,6 +35,12 @@ namespace UnitTest {
         public void CanResolveSampleController() {
             var controller = Container.Resolve<SampleController>();
             Assert.IsNotNull(controller);
+        }
+
+        [Test]
+        public void CanResolveExceptionLogger() {
+            var exLogger = Container.Resolve<IExceptionLogger>();
+            Assert.IsNotNull(exLogger);
         }
     }
 }
