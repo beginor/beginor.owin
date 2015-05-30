@@ -20,6 +20,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\release\Beginor.Owin.StaticFile.dll" target="lib\net45" />
+    <file src="bin/Release/Beginor.Owin.StaticFile.dll" target="lib\net45" />
   </files>
 </package>
