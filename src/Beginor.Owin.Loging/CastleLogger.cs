@@ -6,7 +6,7 @@ namespace Beginor.Owin.Logging {
 
     public class CastleLogger : Microsoft.Owin.Logging.ILogger {
 
-        private ILogger logger;
+        private readonly ILogger logger;
 
         public CastleLogger(ILogger logger) {
             this.logger = logger;

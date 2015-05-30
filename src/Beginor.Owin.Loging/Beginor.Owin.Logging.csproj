@@ -51,11 +51,11 @@
   <ItemGroup>
     <Compile Include="CastleLogger.cs" />
     <Compile Include="CastleLoggerFactory.cs" />
-    <Compile Include="LoggingExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Beginor.Owin.Logging.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

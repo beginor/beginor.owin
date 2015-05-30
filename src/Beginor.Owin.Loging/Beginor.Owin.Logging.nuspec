@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Beginor.Owin.Logging</id>
+    <version>0.1.0</version>
+    <title>Beginor.Owin.Logging</title>
+    <authors>beginor</authors>
+    <owners>beginor</owners>
+    <projectUrl>https://github.com/beginor/Beginor.Owin</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Integrate Castle core logging to owin.</description>
+    <summary>
+        Microsoft owin logging impl with castle core logging.
+    </summary>
+    <releaseNotes>
+        0.1.0: init release;
+    </releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>owin security aes</tags>
+    <dependencies>
+        <dependency id="Owin" version="1.0" />
+        <dependency id="Microsoft.Owin" version="3.0.1" />
+        <dependency id="Castle.Core" version="3.3.3" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\Beginor.Owin.Logging.dll" target="lib\net45" />
+  </files>
+</package>
