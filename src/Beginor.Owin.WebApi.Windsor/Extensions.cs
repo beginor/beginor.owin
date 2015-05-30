@@ -15,13 +15,10 @@ namespace Beginor.Owin.WebApi.Windsor {
             if (container == null) {
                 throw new ArgumentNullException("container");
             }
-            // register windsor dependency resolver.
             container.Register(
                 Component.For<IDependencyResolver>().ImplementedBy<WindsorDependencyResolver>()
             );
             config.DependencyResolver = container.Resolve<IDependencyResolver>();
-
-            //System.Web.Http.ExceptionHandling.ExceptionLogger
         }
 
     }

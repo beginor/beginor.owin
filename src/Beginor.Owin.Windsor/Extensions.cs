@@ -10,8 +10,7 @@ namespace Beginor.Owin.Windsor {
 
         private static readonly string AppContainerName = "Beginor.Owin.Windsor";
 
-        public static void UseWindsorContainer(this IAppBuilder app,
-                                               IWindsorContainer container) {
+        public static void UseWindsorContainer(this IAppBuilder app, IWindsorContainer container) {
             if (app == null) {
                 throw new ArgumentNullException("app");
             }
@@ -24,8 +23,7 @@ namespace Beginor.Owin.Windsor {
             app.Properties.Add(AppContainerName, container);
         }
 
-        public static void UseWindsorContainer(this IAppBuilder app,
-                                               string path) {
+        public static void UseWindsorContainer(this IAppBuilder app, string path) {
             if (app == null) {
                 throw new ArgumentNullException("app");
             }

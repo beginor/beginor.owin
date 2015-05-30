@@ -37,7 +37,7 @@ namespace Beginor.Owin.WebApi.Windsor {
                 service = container.Resolve(serviceType);
             }
             catch (ComponentNotFoundException ex) {
-                Logger.WarnFormat("Can not resolve service of {0}, return is null.", serviceType);
+                Logger.WarnFormat("Can not resolve service of {0}, exception is {1}, return is null.", serviceType, ex);
             }
             catch (Exception ex) {
                 Logger.Warn(string.Format("Exception caught resolving service of {0}, return is null.", serviceType), ex);
