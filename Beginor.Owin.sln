@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beginor.Owin.StaticFile", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beginor.Owin.Security.Aes", "src\Beginor.Owin.Security.Aes\Beginor.Owin.Security.Aes.csproj", "{2DB8C426-DAB9-4A1A-8DE7-862248A1E3B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beginor.Owin.Logging", "src\Beginor.Owin.Loging\Beginor.Owin.Logging.csproj", "{AF055EAA-4CC9-4A7D-B84B-6735518D10AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beginor.Owin.Logging", "src\Beginor.Owin.Logging\Beginor.Owin.Logging.csproj", "{AF055EAA-4CC9-4A7D-B84B-6735518D10AC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beginor.Owin.Windsor", "src\Beginor.Owin.Windsor\Beginor.Owin.Windsor.csproj", "{974DCEF4-1B34-463C-AFA2-29CDB0F61F35}"
 EndProject
