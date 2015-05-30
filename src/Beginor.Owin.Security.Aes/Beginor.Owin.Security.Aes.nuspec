@@ -6,7 +6,7 @@
     <title>Beginor.Owin.Security.Aes</title>
     <authors>beginor</authors>
     <owners>beginor</owners>
-    <projectUrl>https://github.com/beginor/Beginor.Owin.Security.Aes</projectUrl>
+    <projectUrl>https://github.com/beginor/Beginor.Owin</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Aes data protection provider for Microsoft.Owin.Security.</description>
     <summary>
