@@ -57,4 +57,35 @@ Microsoft.Owin.Security.*.dll need app property `host.AppName` to work, but some
 
 ## Beginor.Owin.Logging
 
-castle core logging integration with microsoft owin.
+Castle core logging integration with microsoft owin.
+
+Usage:
+
+First register `CastleLoggerFactory` to Windsor using xml or c# :
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+
+    <facilities>
+        <facility id="logging"
+           type="Castle.Facilities.Logging.LoggingFacility, Castle.Facilities.Logging"
+           loggingApi="log4net"
+           configFile="log.config" />
+    </facilities>
+
+    <components>
+        <component service="Microsoft.Owin.Logging.ILoggerFactory,Microsoft.Owin"
+                   type="Beginor.Owin.Logging.CastleLoggerFactory,Beginor.Owin.Logging"
+                   inspectionBehavior="declaredonly" />
+    </components>
+</configuration>
+```
+Then resolve the service `Microsoft.Owin.Logging.ILoggerFactory` from container, and set to app builder:
+
+```c#
+var loggerFactory = container.Resolve<ILoggerFactory>();
+app.SetLoggerFactory(loggerFactory);
+```
+
+And the owin app will use the logging facility of windsor.
