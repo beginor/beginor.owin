@@ -90,6 +90,9 @@
     <None Include="windsor.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Website\index.html" />
+    <None Include="Website\jquery-2.1.3.js" />
+    <None Include="Website\jquery-2.1.3.min.js" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Beginor.Owin.StaticFile\Beginor.Owin.StaticFile.csproj">
@@ -108,7 +111,7 @@
       <Project>{2DB8C426-DAB9-4A1A-8DE7-862248A1E3B7}</Project>
       <Name>Beginor.Owin.Security.Aes</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Beginor.Owin.Loging\Beginor.Owin.Logging.csproj">
+    <ProjectReference Include="..\..\src\Beginor.Owin.Logging\Beginor.Owin.Logging.csproj">
       <Project>{AF055EAA-4CC9-4A7D-B84B-6735518D10AC}</Project>
       <Name>Beginor.Owin.Logging</Name>
     </ProjectReference>

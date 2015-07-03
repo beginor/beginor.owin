@@ -4,9 +4,12 @@ using Microsoft.Owin.Logging;
 using NUnit.Framework;
 using Beginor.Owin.StaticFile;
 using TestWithNowin.Controllers;
+using System.Collections.Generic;
+using System;
 
 namespace UnitTest {
 
+    [TestFixture]
     public class ConfigTest : WindsorTest {
 
         [Test]
@@ -41,6 +44,17 @@ namespace UnitTest {
         public void CanResolveExceptionLogger() {
             var exLogger = Container.Resolve<IExceptionLogger>();
             Assert.IsNotNull(exLogger);
+        }
+
+        [Test]
+        public void CanChange() {
+            IEnumerable<object> o = new List<string>();
+
+            Action<string> a = new Action<object>(arg => {
+                
+            });
+
+
         }
     }
 }

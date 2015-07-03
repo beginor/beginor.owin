@@ -89,10 +89,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Beginor.Owin.Loging\Beginor.Owin.Logging.csproj">
-      <Project>{AF055EAA-4CC9-4A7D-B84B-6735518D10AC}</Project>
-      <Name>Beginor.Owin.Logging</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\Beginor.Owin.Security.Aes\Beginor.Owin.Security.Aes.csproj">
       <Project>{2DB8C426-DAB9-4A1A-8DE7-862248A1E3B7}</Project>
       <Name>Beginor.Owin.Security.Aes</Name>
@@ -112,6 +108,10 @@
     <ProjectReference Include="..\TestWithNowin\TestWithNowin.csproj">
       <Project>{78E2AB50-BAF7-4651-9B64-C4A57E8DEA85}</Project>
       <Name>TestWithNowin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Beginor.Owin.Logging\Beginor.Owin.Logging.csproj">
+      <Project>{AF055EAA-4CC9-4A7D-B84B-6735518D10AC}</Project>
+      <Name>Beginor.Owin.Logging</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
