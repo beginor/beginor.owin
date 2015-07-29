@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Beginor.Owin.WebApi.Windsor</id>
+    <version>0.1.1</version>
+    <title>Beginor.Owin.WebApi.Windsor</title>
+    <authors>beginor</authors>
+    <owners>beginor</owners>
+    <projectUrl>https://github.com/beginor/Beginor.Owin</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Integrate Castle windsor to Asp.Net WebApi.</description>
+    <summary>
+        Integrate Castle windsor to Asp.Net WebApi
+    </summary>
+    <releaseNotes>
+        0.1.0: init release;
+        0.1.1: fix dependency version;
+    </releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>castle windsor ioc dependency resolver web-api</tags>
+    <dependencies>
+        <dependency id="Microsoft.AspNet.WebApi.Core" version="5.2.3" />
+        <dependency id="Castle.Windsor" version="3.3.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin/Release/Beginor.Owin.WebApi.Windsor.dll" target="lib\net45" />
+  </files>
+</package>
