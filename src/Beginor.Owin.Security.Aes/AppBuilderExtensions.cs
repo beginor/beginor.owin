@@ -3,18 +3,23 @@ using Owin;
 using Microsoft.Owin.Security.DataProtection;
 
 namespace Beginor.Owin.Security.Aes {
-    
+
     public static class AppBuilderExtensions {
 
         public static void UseAesDataProtectionProvider(this IAppBuilder app) {
+            UseAesDataProtectionProvider(app, null);
+        }
+
+        public static void UseAesDataProtectionProvider(this IAppBuilder app, string dataProtectionKey) {
             const string hostAppNameKey = "host.AppName";
+            var appName = "OwinNonameApp";
             if (app.Properties.ContainsKey(hostAppNameKey)) {
-                var appName = app.Properties[hostAppNameKey].ToString();
-                app.SetDataProtectionProvider(new AesDataProtectionProvider(appName));
+                appName = app.Properties[hostAppNameKey].ToString();
             }
-            else {
-                app.SetDataProtectionProvider(new AesDataProtectionProvider());
-            }
+            var dataProtectionProvider = new AesDataProtectionProvider(appName) {
+                Key = dataProtectionKey
+            };
+            app.SetDataProtectionProvider(dataProtectionProvider);
         }
 
     }
