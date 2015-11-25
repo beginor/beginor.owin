@@ -50,6 +50,10 @@ namespace Beginor.Owin.Windsor {
             return (IWindsorContainer)app.Properties[AppContainerName];
         }
 
+        public static void UseWindsorMiddleWare(this IAppBuilder app) {
+            app.Use<WindsorMiddleware>();
+        }
+
     }
 
 }

@@ -12,6 +12,8 @@ using System.Web.Http;
 using Beginor.Owin.Security.Aes;
 using Microsoft.Owin.Logging;
 using Microsoft.Owin.Security.Cookies;
+using Castle.MicroKernel.Registration;
+using Microsoft.Owin.Security;
 
 namespace TestWithNowin {
 
@@ -52,7 +54,15 @@ namespace TestWithNowin {
 
         public static void Configure(IAppBuilder app) {
             app.UseWindsorContainer("windsor.config");
+            app.UseWindsorMiddleWare();
+
             var container = app.GetWindsorContainer();
+            container.Register(
+                Component.For<IAuthenticationManager>()
+                         .FromOwinContext()
+                         .DynamicParameters()
+                         .LifestyleTransient()
+            );
 
             var loggerFactory = container.Resolve<ILoggerFactory>();
             app.SetLoggerFactory(loggerFactory);

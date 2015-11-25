@@ -1,12 +1,19 @@
 ﻿using System.Net.Http;
 using System.Security.Claims;
 using System.Web.Http;
+using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 
 namespace TestWithNowin.Controllers {
 
     [RoutePrefix("api/sample")]
     public class SampleController : ApiController {
+
+        private IAuthenticationManager authenticationManager;
+
+        public SampleController(IAuthenticationManager authenticationManager) {
+            this.authenticationManager = authenticationManager;
+        }
 
         [HttpGet, Route("anonymous")]
         public IHttpActionResult Anonymous() {
