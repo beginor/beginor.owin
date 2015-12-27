@@ -90,7 +90,7 @@
     <None Include="windsor.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Website\index.html" />
+    <None Include="Website\sec-test.html" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Beginor.Owin.StaticFile\Beginor.Owin.StaticFile.csproj">
