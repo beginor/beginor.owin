@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Beginor.Owin.StaticFile</id>
-    <version>0.2.0</version>
+    <version>0.3.0</version>
     <title>Beginor.Owin.StaticFile</title>
     <authors>beginor</authors>
     <owners>beginor</owners>
@@ -11,8 +11,10 @@
     <description>Simple static file middleware for owin.</description>
     <summary>Simple static file middleware for owin, just has reference to Owin.dll, no reference to Microsoft.Owin.*; Can handle most common static file types;ETag header support (optional and default), use file's last modified time as etag value;</summary>
     <releaseNotes>
+        0.3.0: Add html5LocationMode support;
         0.2.0: Add custom etag provider support;
-        0.1.0: init release;</releaseNotes>
+        0.1.0: init release;
+    </releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>owin middleware static-file</tags>
     <dependencies>
