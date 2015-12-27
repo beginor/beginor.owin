@@ -60,7 +60,6 @@ namespace TestWithNowin {
             container.Register(
                 Component.For<IAuthenticationManager>()
                          .FromOwinContext()
-                         .DynamicParameters()
                          .LifestyleTransient()
             );
 

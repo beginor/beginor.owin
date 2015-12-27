@@ -11,6 +11,7 @@ namespace Beginor.Owin.StaticFile {
         string defaultFile = "index.html";
         string rootDirectory = "wwwroot";
         bool enableETag = true;
+        bool enableHtml5LocationMode = false;
 
         public string RootDirectory {
             get {
@@ -37,6 +38,11 @@ namespace Beginor.Owin.StaticFile {
             set {
                 enableETag = value;
             }
+        }
+
+        public bool EnableHtml5LocationMode {
+            get { return enableHtml5LocationMode; }
+            set { enableHtml5LocationMode = value; }
         }
 
         public IMimeTypeProvider MimeTypeProvider { get; set; }

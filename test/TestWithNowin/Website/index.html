@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <base href="/index.html">
+    <title>Test Page</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/tether/dist/css/tether.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Hello, world!</h1>
+        <hr />
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="/tab1">Tab1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tab2">Tab2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tab3">Tab3</a>
+          </li>
+        </ul>
+        <ng-view></ng-view>
+    </div>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/tether/dist/js/tether.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript">
+    angular.module('app', ['ngRoute'])
+        .controller('Tab1Controller', function ($scope) {
+            $scope.message = 'Tab1 Content';
+        })
+        .controller('Tab2Controller', function ($scope) {
+            $scope.message = 'Tab2 Content';
+        })
+        .controller('Tab3Controller', function ($scope) {
+            $scope.message = 'Tab3 Content';
+        })
+        .config(function ($locationProvider, $routeProvider) {
+            $locationProvider.html5Mode(true);
+            $routeProvider
+                .when('/tab1', { controller: 'Tab1Controller', template: '<h2>{{message}}</h2>' })
+                .when('/tab2', { controller: 'Tab2Controller', template: '<h2>{{message}}</h2>' })
+                .when('/tab3', { controller: 'Tab3Controller', template: '<h2>{{message}}</h2>' })
+                .otherwise({ redirectTo: '/tab1' });
+        });
+    angular.bootstrap(document, ['app']);
+    //
+    $(function () {
+        $('a.nav-link').click(function () {
+            $('a.nav-link').removeClass('active');
+            $(this).addClass('active');
+        });
+    });
+    </script>
+</body>
+</html>

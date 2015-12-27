@@ -91,6 +91,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Website\sec-test.html" />
+    <None Include="Website\index.html" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Beginor.Owin.StaticFile\Beginor.Owin.StaticFile.csproj">
