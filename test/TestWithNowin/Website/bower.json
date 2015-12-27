@@ -1,0 +1,26 @@
+{
+  "name": "Website",
+  "homepage": "https://github.com/beginor/beginor.owin",
+  "authors": [
+    "beginor <beginor@qq.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.2",
+    "angular": "~1.4.8",
+    "angular-route": "~1.4.8"
+  }
+}
