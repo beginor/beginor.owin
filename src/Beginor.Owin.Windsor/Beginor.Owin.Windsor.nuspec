@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Beginor.Owin.Windsor</id>
-    <version>0.2.0</version>
+    <version>0.2.1</version>
     <title>Beginor.Owin.Windsor</title>
     <authors>beginor</authors>
     <owners>beginor</owners>
@@ -13,9 +13,10 @@
         Integrate Castle windsor to owin
     </summary>
     <releaseNotes>
-0.2.0: add a `WindsorMiddleWare`, with use of this middleware `app.Use&lt;WindsorMiddleWare&gt;()`, can resolve `IAuthenticationManager` with config `container.Register(Component.For&lt;IAuthenticationManager&gt;().FromOwinContext().LifestyleTransient());`
-0.1.1: fix dependency version;
-0.1.0: init release;
+        0.2.1: add version to assembly file;
+        0.2.0: add a `WindsorMiddleWare`, with use of this middleware `app.Use&lt;WindsorMiddleWare&gt;()`, can resolve `IAuthenticationManager` with config `container.Register(Component.For&lt;IAuthenticationManager&gt;().FromOwinContext().LifestyleTransient());`
+        0.1.1: fix dependency version;
+        0.1.0: init release;
     </releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>owin castle windsor ioc dependency resolver</tags>
@@ -27,6 +28,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin/Release/Beginor.Owin.Windsor.dll" target="lib\net45" />
+    <file src="bin/Release/Beginor.Owin.Windsor.dll" target="lib/net45" />
   </files>
 </package>

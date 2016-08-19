@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Beginor.Owin.Security.Aes</id>
-    <version>0.2.0</version>
+    <version>0.2.1</version>
     <title>Beginor.Owin.Security.Aes</title>
     <authors>beginor</authors>
     <owners>beginor</owners>
@@ -14,6 +14,7 @@
         with mono and any owin host.;
     </summary>
     <releaseNotes>
+        0.2.1: add version to assembly file;
         0.2.0: add Key property to AesDataProtectionProvider for SSO/OAuth, if key is not set, use app.Properties["host.AppName"] or Guid.NewGuid() as key, 
         0.1.0: init release;
     </releaseNotes>
@@ -24,6 +25,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin/Release/Beginor.Owin.Security.Aes.dll" target="lib\net45" />
+    <file src="bin/Release/Beginor.Owin.Security.Aes.dll" target="lib/net45" />
   </files>
 </package>

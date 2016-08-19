@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Beginor.Owin.Logging</id>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
     <title>Beginor.Owin.Logging</title>
     <authors>beginor</authors>
     <owners>beginor</owners>
@@ -13,6 +13,7 @@
         Microsoft owin logging impl with castle core logging.
     </summary>
     <releaseNotes>
+        0.1.2: add version to assembly file;
         0.1.1: fix tags description;
         0.1.0: init release;
     </releaseNotes>
@@ -25,6 +26,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin/Release/Beginor.Owin.Logging.dll" target="lib\net45" />
+    <file src="bin/Release/Beginor.Owin.Logging.dll" target="lib/net45" />
   </files>
 </package>
