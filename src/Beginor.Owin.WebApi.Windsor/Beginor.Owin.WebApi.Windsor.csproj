@@ -60,6 +60,7 @@
     <Compile Include="WindsorDependencyResolver.cs" />
     <Compile Include="WindsorDependencyScope.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ExceptionHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Beginor.Owin.WebApi.Windsor.nuspec" />
