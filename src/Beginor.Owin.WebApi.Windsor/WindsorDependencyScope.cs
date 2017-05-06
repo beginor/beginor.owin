@@ -37,7 +37,7 @@ namespace Beginor.Owin.WebApi.Windsor {
                 service = container.Resolve(serviceType);
             }
             catch (ComponentNotFoundException ex) {
-                Logger.WarnFormat("Can not resolve service of {0}, exception is {1}, return is null.", serviceType, ex);
+                Logger.Info($"{serviceType} is not registered.");
             }
             catch (Exception ex) {
                 Logger.Warn(string.Format("Exception caught resolving service of {0}, return is null.", serviceType), ex);
@@ -48,7 +48,7 @@ namespace Beginor.Owin.WebApi.Windsor {
         public IEnumerable<object> GetServices(Type serviceType) {
             var services = container.ResolveAll(serviceType).Cast<object>();
             if (!services.Any()) {
-                Logger.WarnFormat("Services of type {0} is not registered, return is empty.", serviceType);
+                Logger.Info($"Services of type {serviceType} is not registered.");
             }
             return services;
         }

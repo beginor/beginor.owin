@@ -13,7 +13,10 @@ namespace Beginor.Owin.WebApi.Windsor {
         }
 
         public override void Log(ExceptionLoggerContext context) {
-            Logger.ErrorFormat(context.Exception, "Exception caught processing request {0}", context.Request.RequestUri);
+            var ex = context.Exception;
+            var request = context.Request;
+            var message = $"Exception caught processing request {request.RequestUri}";
+            Logger.Error(message, context.Exception);
         }
 
     }
