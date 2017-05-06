@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Beginor.Owin.Windsor</id>
-    <version>0.2.1</version>
+    <version>0.2.2</version>
     <title>Beginor.Owin.Windsor</title>
     <authors>beginor</authors>
     <owners>beginor</owners>
@@ -13,6 +13,9 @@
         Integrate Castle windsor to owin
     </summary>
     <releaseNotes>
+        0.2.2:
+            - fix hard coded "windsor.config";
+            - register container as singleton
         0.2.1: add version to assembly file;
         0.2.0: add a `WindsorMiddleWare`, with use of this middleware `app.Use&lt;WindsorMiddleWare&gt;()`, can resolve `IAuthenticationManager` with config `container.Register(Component.For&lt;IAuthenticationManager&gt;().FromOwinContext().LifestyleTransient());`
         0.1.1: fix dependency version;
