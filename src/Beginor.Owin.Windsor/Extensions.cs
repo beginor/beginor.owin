@@ -32,10 +32,12 @@ namespace Beginor.Owin.Windsor {
             }
             IWindsorContainer container = new WindsorContainer();
             container.Install(
-                Configuration.FromXmlFile("windsor.config")
+                Configuration.FromXmlFile(path)
             );
             container.Register(
-                Component.For<IWindsorContainer>().Instance(container)
+                Component.For<IWindsorContainer>()
+                    .Instance(container)
+                    .LifestyleSingleton()
             );
             app.UseWindsorContainer(container);
         }
