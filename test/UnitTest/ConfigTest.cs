@@ -6,6 +6,9 @@ using Beginor.Owin.StaticFile;
 using TestWithNowin.Controllers;
 using System.Collections.Generic;
 using System;
+using System.Web.Http.Metadata;
+using System.Web.Http.Metadata.Providers;
+using Castle.MicroKernel.Registration;
 
 namespace UnitTest {
 
@@ -49,12 +52,24 @@ namespace UnitTest {
         [Test]
         public void CanChange() {
             IEnumerable<object> o = new List<string>();
-
-            Action<string> a = new Action<object>(arg => {
-                
+            Action<string> a = new Action<object>(arg => { 
             });
+        }
 
-
+        [Test]
+        public void CanResolveAllModelMetadataProvider() {
+            Container.Register(
+                Component.For<ModelMetadataProvider>()
+                    .ImplementedBy<DataAnnotationsModelMetadataProvider>(),
+                Component.For<ModelMetadataProvider>()
+                    .ImplementedBy<EmptyModelMetadataProvider>()
+                    .Named("EmptyModelMetadataProvider"),
+                Component.For<ModelMetadataProvider>()
+                    .ImplementedBy<DataAnnotationsModelMetadataProvider>()
+                    .Named("DataAnnotationsModelMetadataProvider")
+            );
+            var providers = Container.ResolveAll<ModelMetadataProvider>();
+            Assert.AreEqual(2, providers.Length);
         }
     }
 }
