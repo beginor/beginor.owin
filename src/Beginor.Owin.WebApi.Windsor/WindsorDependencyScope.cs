@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Http.Dependencies;
 using Castle.Core.Logging;
 using Castle.MicroKernel;
+using Castle.MicroKernel.Lifestyle;
 using Castle.Windsor;
 
 namespace Beginor.Owin.WebApi.Windsor {
@@ -23,12 +24,26 @@ namespace Beginor.Owin.WebApi.Windsor {
             set { logger = value; }
         }
 
+        private IDisposable scope;
+
         public WindsorDependencyScope(IWindsorContainer container) {
             this.container = container;
+            scope = container.BeginScope();
+        }
+
+        ~WindsorDependencyScope() {
+            Dispose(false);
         }
 
         public void Dispose() {
-            container = null;
+            Dispose(true);
+        }
+
+        protected virtual void Dispose(bool disposing) {
+            if (disposing) {
+                scope.Dispose();
+                container = null;
+            }
         }
 
         public object GetService(Type serviceType) {

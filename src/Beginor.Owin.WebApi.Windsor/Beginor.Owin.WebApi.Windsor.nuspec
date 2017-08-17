@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Beginor.Owin.WebApi.Windsor</id>
-    <version>0.2.1</version>
+    <version>0.2.2</version>
     <title>Beginor.Owin.WebApi.Windsor</title>
     <authors>beginor</authors>
     <owners>beginor</owners>
@@ -13,6 +13,7 @@
         Integrate Castle windsor to Asp.Net WebApi
     </summary>
     <releaseNotes>
+        0.2.2: fix scoped lifestyle with owin web api.
         0.2.1: fix v0.2.0 does not include new file.
         0.2.0:
             - register webapi default services to container;

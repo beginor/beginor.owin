@@ -1,9 +1,10 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Security.Claims;
 using System.Web.Http;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
-using System;
+using TestWithNowin.Logic;
 
 namespace TestWithNowin.Controllers {
 
@@ -11,9 +12,22 @@ namespace TestWithNowin.Controllers {
     public class SampleController : ApiController {
 
         private IAuthenticationManager authenticationManager;
+        private SampleManager manager;
 
-        public SampleController(IAuthenticationManager authenticationManager) {
+        public SampleController(
+            IAuthenticationManager authenticationManager,
+            SampleManager manager
+        ) {
             this.authenticationManager = authenticationManager;
+            this.manager = manager;
+        }
+
+        protected override void Dispose(bool disposing) {
+            if (disposing) {
+                authenticationManager = null;
+                manager = null;
+            }
+            base.Dispose(disposing);
         }
 
         [HttpGet, Route("anonymous")]
