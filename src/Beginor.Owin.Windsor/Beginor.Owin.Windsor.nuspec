@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Beginor.Owin.Windsor</id>
-    <version>0.2.2</version>
+    <version>0.2.3</version>
     <title>Beginor.Owin.Windsor</title>
     <authors>beginor</authors>
     <owners>beginor</owners>
@@ -13,6 +13,7 @@
         Integrate Castle windsor to owin
     </summary>
     <releaseNotes>
+        0.2.3: update Microsoft.Owin
         0.2.2:
             - fix hard coded "windsor.config";
             - register container as singleton
@@ -25,7 +26,7 @@
     <tags>owin castle windsor ioc dependency resolver</tags>
     <dependencies>
         <dependency id="Owin" version="1.0" />
-        <dependency id="Microsoft.Owin" version="3.0.1" />
+        <dependency id="Microsoft.Owin" version="3.1.0" />
         <dependency id="Castle.Core" version="3.3.3" />
         <dependency id="Castle.Windsor" version="3.3.0" />
     </dependencies>
