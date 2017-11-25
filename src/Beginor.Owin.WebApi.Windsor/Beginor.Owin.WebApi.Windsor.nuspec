@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Beginor.Owin.WebApi.Windsor</id>
-    <version>0.2.2</version>
+    <version>0.2.3</version>
     <title>Beginor.Owin.WebApi.Windsor</title>
     <authors>beginor</authors>
     <owners>beginor</owners>
@@ -13,6 +13,7 @@
         Integrate Castle windsor to Asp.Net WebApi
     </summary>
     <releaseNotes>
+        0.2.3: update castle windsor to 4.1.0.
         0.2.2: fix scoped lifestyle with owin web api.
         0.2.1: fix v0.2.0 does not include new file.
         0.2.0:
@@ -26,7 +27,7 @@
     <tags>castle windsor ioc dependency resolver web-api</tags>
     <dependencies>
         <dependency id="Microsoft.AspNet.WebApi.Core" version="5.2.3" />
-        <dependency id="Castle.Windsor" version="3.3.0" />
+        <dependency id="Castle.Windsor" version="4.1.0" />
     </dependencies>
   </metadata>
   <files>
