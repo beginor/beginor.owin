@@ -197,3 +197,5 @@ FakesAssemblies/
 
 # Mac Junk file
 *.DS_Store
+
+.idea
